@@ -1,8 +1,0 @@
-cab-booking/models/Cab.java
- cabbooking.models.Cab
-cab-booking/models/Location.java
- cabbooking.models.Location
-cab-booking/Application.java
- cabbooking.Application
-cab-booking/models/Rider.java
- cabbooking.models.Rider
