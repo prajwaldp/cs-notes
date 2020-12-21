@@ -1,3 +1,12 @@
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+    int fourSumCount(vector<int>&, vector<int>&, vector<int>&, vector<int>&);
+};
+
 int Solution::fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
     unordered_map<int, int> abFreq; 
     for (int a: A) {

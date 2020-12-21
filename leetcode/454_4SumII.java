@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer, Integer> abFreq = new HashMap<>();
