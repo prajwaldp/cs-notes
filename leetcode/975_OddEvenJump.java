@@ -53,6 +53,37 @@ class Solution {
         return ans;
     }
 
+    public int oddEvenJumpsAlt(int[] A) {
+        int n = A.length;
+        boolean[] canHigher = new boolean[n];
+        boolean[] canLower = new boolean[n];
+        canHigher[n - 1] = canLower[n - 1] = true;
+        
+        TreeMap<Integer, Integer> valToIdx = new TreeMap<>();
+        valToIdx.put(A[n - 1], n - 1);
+        
+        int count = 1;
+        for (int i = n - 2; i >= 0; i--) {
+            Map.Entry<Integer, Integer> lo = valToIdx.floorEntry(A[i]);
+            Map.Entry<Integer, Integer> hi = valToIdx.ceilingEntry(A[i]);
+
+            if (lo != null) {
+                canLower[i] = canHigher[lo.getValue()];
+            }
+            if (hi != null) {
+                canHigher[i] = canLower[hi.getValue()];
+            }
+
+            if (canHigher[i]) {
+                count++;
+            }
+
+            valToIdx.put(A[i], i);
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
         int[] A = {5, 4, 1, 2, 10, 8};
         var s = new Solution();
