@@ -1,0 +1,16 @@
+Graph Theory
+============
+
+* Euler path/circuit: a path/circuit that uses every edge of the graph exactly once.
+* Hamiltonian path/circuit: a "simple" path/circuit that passes through every vertex exactly once.
+
+Euler path/cicuit
+-----------------
+Theorem 1: A connected multigraph (and simple graph) has an Euler ciruit if and only if each of its vertices have an even degree.
+Theorem 2: A connected multigraph (and simple graph) has an Euler path but not an Euler circuit if and only if it has exactly two vertices of odd degree.
+
+Hamilonian path/circuit
+-----------------------
+Dirac's theorem: A simple graph with n >= 3 vertices with each vertex degree >= n/2 has an Hamilonian circuit.
+Ore's theorem: A simple graph with n >= 3 vertices such that deg(u) + deg(v) >= n for every pair of non-adjacent vertices u and v, has a Hamiltonian circuit.
+

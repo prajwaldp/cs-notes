@@ -2,4 +2,4 @@ resources/*
 Solution.class
 .vscode
 .idea
-
+.DS_Store
