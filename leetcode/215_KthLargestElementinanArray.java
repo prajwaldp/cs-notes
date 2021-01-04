@@ -30,7 +30,7 @@ class Solution {
     return partitionV1(nums, lo, hi);
   }
 
-  // Hoares partioning scheme (more efficient)
+  // Hoare's partioning scheme (more efficient)
   private int partitionV1(int[] nums, int lo, int hi) {
     int pivot = nums[lo];
     int i = lo;
@@ -51,8 +51,35 @@ class Solution {
     return j;
   }
 
-  // A simpler partition algorithm ("Lomuto's partitioning")
+  // A more intuitive version of Hoare's partitioning algorithm
   private int partitionV2(int[] nums, int lo, int hi) {
+    int i = lo;
+    int j = hi;
+    while (i < j) {
+      while (i < j && nums[i] < nums[j]) {
+        i++;
+      }
+      if (i < j) {
+        swap(nums, i, j);
+        j--;
+      }
+
+      while (i < j && nums[i] < nums[j]) {
+        j--;
+      }
+      if (i < j) {
+        swap(nums, i, j);
+        i++;
+      }
+    }
+
+    // i and j are equal at this point
+    assert i == j
+    return j; // or return i
+  }
+
+  // A simpler partition algorithm ("Lomuto's partitioning")
+  private int partitionV3(int[] nums, int lo, int hi) {
     int pivot = nums[hi];
     int i = lo;
     for (int j = lo; j < hi; j++) {
