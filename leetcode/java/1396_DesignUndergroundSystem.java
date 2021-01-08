@@ -1,7 +1,3 @@
-// Design a subway system
-// The API has two main methods - checkIn checks in a customer at a station
-//                              - checkOut checks out a customer at a station
-
 import java.util.*;
 
 class Route {

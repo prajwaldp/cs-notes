@@ -4,8 +4,8 @@ class Solution {
       return 1;
     }
 
-    int lo = 0;
-    int hi = x / 2 + 1;
+    int lo = 0;  // even 1 works
+    int hi = x / 2 + 1;  // even x works
 
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
