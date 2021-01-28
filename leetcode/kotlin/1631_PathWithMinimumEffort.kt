@@ -2,7 +2,7 @@ class Solution {
     fun minimumEffortPath(heights: Array<IntArray>): Int {
         val m = heights.size
         val n = heights[0].size
-        val distances = Array<IntArray>(m, { IntArray(n, Integer.MAX_VALUE) })
+        val distances = Array<IntArray>(m, { IntArray(n, { Integer.MAX_VALUE }) })
         val minHeap = PriorityQueue<IntArray> { a, b -> a[0] - b[0] }
 
         distances[0][0] = 0
